@@ -68,20 +68,22 @@ class Help{
         String temp; //used for comparison
         //int inc = 0;
         int counter = 0;
-        int duplicate = 0;
         temp = codes[0]; // 123
-        
+         int duplicate = 0;
         String reverseCode = reversed(temp);
         
         
         for(int i=0;i<codes.length;i++){
-            //if the values are different sizes 123 && 1234 they are automatically distint
+           
+            //if the values are different sizes 123 && 1234 they are automatically distinct
             if(temp.length()==codes[i].length()){
                 if(temp != (codes[i])){
                 counter++;
-            }
+                }else{
+                    duplicate++;
+                }
                 if(reverseCode==(codes[i])){ //count the number of duplicates in the list so u can later subtract from total number
-                duplicate++;
+                    duplicate=duplicate+1;
                 }
 
 
@@ -92,7 +94,6 @@ class Help{
             
 
             }//end loop
-        
         return counter;
     }
     /**
